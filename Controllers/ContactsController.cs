@@ -1,11 +1,13 @@
 ﻿using ContactNotesAPI.DTOs;
 using ContactNotesAPI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ContactNotesAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class ContactsController(IContactService service) : ControllerBase
     {
         private readonly IContactService _service = service;
